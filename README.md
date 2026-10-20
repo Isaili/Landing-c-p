@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Grano y Grano · Landing
 
-## Getting Started
+Landing page de **Grano y Grano**, la app para compradores y productores de café y pimienta en Chiapas.
 
-First, run the development server:
+Next.js (App Router, export estático) · TypeScript · Tailwind CSS · shadcn/ui · Three.js (React Three Fiber)
+
+## Desarrollo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # genera el sitio estático en out/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Cambiar precios y planes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Todo vive en [`src/features/landing/data/plans.ts`](src/features/landing/data/plans.ts):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `pricing.comprador`, `pricing.productor` y `pricing.ambos` (paquete): nombre, frase, precio mensual/anual, botón, etiqueta y puntos clave de cada plan, más la tabla comparativa (`true` = ✓, `false` = —, texto = se muestra tal cual). `comingSoon: true` en una fila agrega la etiqueta "Próximamente".
+- `paymentsEnabled`: mientras sea `false`, los botones de Platino y Max dicen "Próximamente". Cámbialo a `true` cuando haya pagos.
+- `harvestPasses`, `commission`, `founderOffer`, `trialDays` y `yearlyBadge`.
 
-## Learn More
+Los montos son números en MXN sin decimales (`3490`), el formato `$3,490 MXN` se aplica solo.
 
-To learn more about Next.js, take a look at the following resources:
+## Cambiar enlaces
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[`src/features/landing/data/links.ts`](src/features/landing/data/links.ts): App Store, Google Play, correo de contacto, redes sociales (deja `""` para ocultar una) y `SITE_URL` (dominio usado en SEO, sitemap y Open Graph).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Cambiar textos
 
-## Deploy on Vercel
+- Secciones, beneficios, funciones y pasos del mercado: [`data/content.ts`](src/features/landing/data/content.ts)
+- Preguntas frecuentes: [`data/faq.ts`](src/features/landing/data/faq.ts) (las marcadas con `TODO: validar` dependen de decisiones pendientes)
+- Testimonios: [`data/testimonials.ts`](src/features/landing/data/testimonials.ts). La sección se oculta mientras el arreglo esté vacío; agrega solo testimonios reales.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Cambiar imágenes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Los placeholders están en `public/images/`. Reemplaza el archivo conservando el nombre, o cambia la ruta en `data/content.ts`:
+
+| Archivo | Dónde aparece | Tamaño sugerido |
+|---|---|---|
+| `app-mockup.svg` | Teléfono del hero | 300 × 620 (o proporción similar) |
+| `feature-*.svg` | Bloques de funciones | 560 × 420 (4:3) |
+
+Puedes usar `.png`, `.jpg` o `.webp`; solo actualiza la extensión en `content.ts`. Las fotos de testimonios van en `public/images/testimonios/`.
+
+La imagen para redes sociales (Open Graph) se genera en [`src/app/opengraph-image.tsx`](src/app/opengraph-image.tsx).
+
+## Despliegue en GitHub Pages
+
+Cada push a `main` ejecuta [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), que compila y publica `out/`.
+
+Primera vez: en el repositorio ve a **Settings → Pages → Build and deployment → Source** y elige **GitHub Actions**.
+
+El workflow define `NEXT_PUBLIC_BASE_PATH=/<nombre-del-repo>`. Si usas un dominio propio, quita esa variable del workflow y actualiza `SITE_URL`.

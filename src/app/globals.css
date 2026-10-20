@@ -1,26 +1,114 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-display);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Colores de marca: café, cafetal, crema y barro */
+  --color-coffee: var(--coffee);
+  --color-coffee-deep: var(--coffee-deep);
+  --color-leaf: var(--leaf);
+  --color-leaf-soft: var(--leaf-soft);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-clay: var(--clay);
+  --color-clay-dark: var(--clay-dark);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Marca */
+  --coffee: #3b2418;
+  --coffee-deep: #22140d;
+  --leaf: #2f5d3a;
+  --leaf-soft: #e4efe5;
+  --cream: #fbf7f0;
+  --cream-deep: #f3eadb;
+  --clay: #c8743a;
+  /* Variante oscura del acento para texto sobre crema (contraste AA) */
+  --clay-dark: #9a4f1c;
+
+  /* Tokens de shadcn mapeados a la marca */
+  --background: var(--cream);
+  --foreground: #2a1a12;
+  --card: #fffdf9;
+  --card-foreground: #2a1a12;
+  --popover: #fffdf9;
+  --popover-foreground: #2a1a12;
+  --primary: var(--coffee);
+  --primary-foreground: var(--cream);
+  --secondary: var(--leaf-soft);
+  --secondary-foreground: #1f4229;
+  --muted: var(--cream-deep);
+  --muted-foreground: #6b5547;
+  --accent: #f3e1cf;
+  --accent-foreground: var(--coffee);
+  --destructive: #b42318;
+  --border: #e6d9c6;
+  --input: #e6d9c6;
+  --ring: var(--clay);
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* Foco visible y consistente para navegación con teclado */
+  :focus-visible {
+    outline: 3px solid var(--clay);
+    outline-offset: 2px;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading tracking-tight text-balance;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
