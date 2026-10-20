@@ -43,7 +43,7 @@ Los placeholders están en `public/images/`. Reemplaza el archivo conservando el
 
 Puedes usar `.png`, `.jpg` o `.webp`; solo actualiza la extensión en `content.ts`. Las fotos de testimonios van en `public/images/testimonios/`.
 
-La imagen para redes sociales (Open Graph) se genera en [`src/app/opengraph-image.tsx`](src/app/opengraph-image.tsx).
+La imagen para redes sociales (Open Graph) es `public/images/og-image.png` (1200 × 630).
 
 ## Despliegue en GitHub Pages
 

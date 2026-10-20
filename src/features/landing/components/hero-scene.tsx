@@ -12,7 +12,8 @@ function createCoffeeBeanGeometry() {
   const v = new THREE.Vector3();
   for (let i = 0; i < pos.count; i++) {
     v.fromBufferAttribute(pos, i);
-    let { x, y, z } = v;
+    const { y } = v;
+    let { x, z } = v;
     x *= 0.72;
     z *= 0.52;
     if (z > 0) {
