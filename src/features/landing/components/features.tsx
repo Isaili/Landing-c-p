@@ -7,7 +7,7 @@ export function Features() {
     <section
       id="como-funciona"
       aria-labelledby="como-funciona-title"
-      className="scroll-mt-16 bg-card py-20 sm:py-24"
+      className="scroll-mt-16 bg-white py-20 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading

@@ -18,14 +18,14 @@ export function PlanCard({ plan, billing }: { plan: Plan; billing: Billing }) {
       aria-labelledby={titleId}
       className={cn(
         "relative flex h-full flex-col rounded-3xl border bg-card p-6 sm:p-7",
-        plan.highlighted && "border-2 border-coffee shadow-xl shadow-coffee/10",
+        plan.highlighted && "border-2 border-leaf shadow-xl shadow-leaf/10",
       )}
     >
       {plan.badge && (
         <span
           className={cn(
             "absolute -top-3.5 left-6 rounded-full px-3 py-1 text-xs font-semibold",
-            plan.highlighted ? "bg-coffee text-cream" : "bg-clay text-coffee-deep",
+            plan.highlighted ? "bg-leaf text-white" : "bg-accent text-clay-dark ring-1 ring-clay/30",
           )}
         >
           {plan.badge}

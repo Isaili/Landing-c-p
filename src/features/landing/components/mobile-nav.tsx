@@ -29,7 +29,7 @@ export function MobileNav() {
       >
         <MenuIcon className="size-6" />
       </SheetTrigger>
-      <SheetContent side="right" className="w-[85%] bg-cream p-0">
+      <SheetContent side="right" className="w-[85%] bg-white p-0">
         <div className="border-b px-5 py-4">
           <SheetTitle>
             <Logo />

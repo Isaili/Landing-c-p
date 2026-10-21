@@ -28,6 +28,7 @@ const footerLinks = [
   { label: "Preguntas", href: "/#preguntas" },
   { label: "Aviso de privacidad", href: "/aviso-de-privacidad" },
   { label: "Términos y condiciones", href: "/terminos-y-condiciones" },
+  { label: "Créditos de fotos", href: "/creditos" },
 ];
 
 export function Footer() {

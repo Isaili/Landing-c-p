@@ -29,6 +29,7 @@
   --color-coffee-deep: var(--coffee-deep);
   --color-leaf: var(--leaf);
   --color-leaf-soft: var(--leaf-soft);
+  --color-leaf-dark: var(--leaf-dark);
   --color-cream: var(--cream);
   --color-cream-deep: var(--cream-deep);
   --color-clay: var(--clay);
@@ -46,33 +47,35 @@
 :root {
   /* Marca */
   --coffee: #3b2418;
-  --coffee-deep: #22140d;
+  --coffee-deep: #1d1a16;
   --leaf: #2f5d3a;
-  --leaf-soft: #e4efe5;
-  --cream: #fbf7f0;
-  --cream-deep: #f3eadb;
+  --leaf-dark: #234a2c;
+  --leaf-soft: #e6f0e6;
+  /* Fondos: blanco y un gris verdoso muy suave para alternar secciones */
+  --cream: #ffffff;
+  --cream-deep: #f4f7f2;
   --clay: #c8743a;
-  /* Variante oscura del acento para texto sobre crema (contraste AA) */
+  /* Variante oscura del acento para texto sobre blanco (contraste AA) */
   --clay-dark: #9a4f1c;
 
   /* Tokens de shadcn mapeados a la marca */
-  --background: var(--cream);
-  --foreground: #2a1a12;
-  --card: #fffdf9;
-  --card-foreground: #2a1a12;
-  --popover: #fffdf9;
-  --popover-foreground: #2a1a12;
-  --primary: var(--coffee);
-  --primary-foreground: var(--cream);
+  --background: #ffffff;
+  --foreground: #1f1d1a;
+  --card: #ffffff;
+  --card-foreground: #1f1d1a;
+  --popover: #ffffff;
+  --popover-foreground: #1f1d1a;
+  --primary: var(--leaf);
+  --primary-foreground: #ffffff;
   --secondary: var(--leaf-soft);
   --secondary-foreground: #1f4229;
   --muted: var(--cream-deep);
-  --muted-foreground: #6b5547;
-  --accent: #f3e1cf;
+  --muted-foreground: #5a5f55;
+  --accent: #fcf0e6;
   --accent-foreground: var(--coffee);
   --destructive: #b42318;
-  --border: #e6d9c6;
-  --input: #e6d9c6;
+  --border: #e2e7de;
+  --input: #e2e7de;
   --ring: var(--clay);
   --radius: 0.75rem;
 }

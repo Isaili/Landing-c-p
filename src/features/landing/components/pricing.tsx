@@ -63,7 +63,7 @@ export function Pricing() {
     <section
       id="precios"
       aria-labelledby="precios-title"
-      className="scroll-mt-16 py-20 sm:py-24"
+      className="scroll-mt-16 bg-white py-20 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading

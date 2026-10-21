@@ -61,7 +61,7 @@ export function ComparisonTable({
         </TableHeader>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.feature} className="hover:bg-cream">
+            <TableRow key={row.feature} className="hover:bg-cream-deep/60">
               <TableHead
                 scope="row"
                 className="sticky left-0 z-10 h-auto max-w-[220px] bg-card px-4 py-3 font-normal whitespace-normal text-foreground sm:max-w-none"

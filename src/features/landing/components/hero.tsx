@@ -1,23 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownIcon, CheckIcon } from "lucide-react";
+import { ArrowDownIcon, CheckIcon, MapPinIcon } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { hero } from "../data/content";
+import { photos } from "../data/photos";
 import { asset } from "../lib/asset";
 import { HeroSceneLoader } from "./hero-scene-loader";
 
 export function Hero() {
+  const photo = photos.cafetal;
+
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,var(--cream-deep),var(--cream)_60%)] pt-28 pb-16 sm:pt-32 lg:pb-24"
+      className="relative overflow-hidden bg-white pt-28 pb-20 sm:pt-32 lg:pb-28"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr]">
         <div className="text-center lg:text-left">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-leaf-soft px-3 py-1 text-sm font-medium text-secondary-foreground">
-            <span className="size-2 rounded-full bg-leaf" aria-hidden="true" />
-            Para café y pimienta en Chiapas
+            <MapPinIcon className="size-4" aria-hidden="true" />
+            Para compradores y productores de Chiapas
           </p>
           <h1
             id="hero-title"
@@ -37,7 +40,7 @@ export function Hero() {
               href="/#precios"
               className={cn(
                 buttonVariants({ variant: "outline", size: "xl" }),
-                "border-coffee/25 bg-transparent",
+                "border-leaf/30 bg-white",
               )}
             >
               {hero.secondaryCta}
@@ -55,18 +58,33 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
-          <HeroSceneLoader />
-          <div className="absolute inset-0 flex items-center justify-center">
+        {/* Foto real de un cafetal en Chiapas + mockup de la app */}
+        <div className="relative mx-auto w-full max-w-md pb-10 pl-10 sm:pl-16 lg:max-w-none">
+          <figure className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-leaf/20">
             <Image
-              src={asset(hero.mockup.src)}
-              alt={hero.mockup.alt}
-              width={300}
-              height={620}
+              src={asset(photo.src)}
+              alt={photo.alt}
+              fill
               priority
-              className="h-[88%] w-auto drop-shadow-[0_30px_40px_rgba(34,20,13,0.35)]"
+              sizes="(min-width: 1024px) 480px, 90vw"
+              className="object-cover"
             />
-          </div>
+            <figcaption className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-black/55 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
+              <MapPinIcon className="size-3.5" aria-hidden="true" />
+              {photo.caption}
+            </figcaption>
+          </figure>
+
+          <HeroSceneLoader />
+
+          <Image
+            src={asset(hero.mockup.src)}
+            alt={hero.mockup.alt}
+            width={300}
+            height={620}
+            priority
+            className="absolute bottom-0 left-0 w-[44%] max-w-[210px] drop-shadow-[0_24px_32px_rgba(0,0,0,0.35)]"
+          />
         </div>
       </div>
     </section>

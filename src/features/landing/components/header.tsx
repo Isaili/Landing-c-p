@@ -23,13 +23,13 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-40 transition-[background-color,box-shadow,backdrop-filter]",
         scrolled
-          ? "bg-cream/90 shadow-[0_1px_0_var(--border)] backdrop-blur-md"
+          ? "bg-white/90 shadow-[0_1px_0_var(--border)] backdrop-blur-md"
           : "bg-transparent",
       )}
     >
       <a
         href="#contenido"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-coffee focus:px-4 focus:py-2 focus:text-cream"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-leaf focus:px-4 focus:py-2 focus:text-white"
       >
         Saltar al contenido
       </a>

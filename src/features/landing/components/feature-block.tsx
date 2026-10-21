@@ -31,7 +31,7 @@ export function FeatureBlock({
           <p className="flex flex-wrap items-center gap-2 text-sm font-semibold tracking-wide text-clay-dark uppercase">
             <span
               aria-hidden="true"
-              className="inline-flex size-7 items-center justify-center rounded-full bg-coffee text-xs text-cream"
+              className="inline-flex size-7 items-center justify-center rounded-full bg-leaf text-xs text-white"
             >
               {index + 1}
             </span>

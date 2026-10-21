@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" font-family="Inter, -apple-system, Segoe UI, Roboto, sans-serif">
-  <rect width="560" height="420" fill="#f3eadb"/>
+  <rect width="560" height="420" fill="#f4f7f2"/>
   <rect x="50" y="40" width="460" height="100" rx="24" fill="#3b2418"/>
   <text x="80" y="80" font-size="15" fill="#e6d9c6">Tu presupuesto</text>
   <text x="80" y="115" font-size="28" font-weight="700" fill="#fbf7f0">$150,000</text>

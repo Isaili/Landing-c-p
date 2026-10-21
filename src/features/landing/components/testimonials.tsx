@@ -8,7 +8,7 @@ export function Testimonials() {
   if (testimonials.length === 0) return null;
 
   return (
-    <section aria-labelledby="testimonios-title" className="bg-card py-20 sm:py-24">
+    <section aria-labelledby="testimonios-title" className="bg-cream-deep py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           id="testimonios-title"
@@ -18,7 +18,7 @@ export function Testimonials() {
         <ul className="mt-12 grid gap-6 md:grid-cols-3">
           {testimonials.slice(0, 3).map((t) => (
             <li key={t.name}>
-              <figure className="flex h-full flex-col rounded-3xl border bg-cream p-6">
+              <figure className="flex h-full flex-col rounded-3xl border bg-white p-6">
                 <blockquote className="flex-1 text-lg text-coffee">
                   “{t.quote}”
                 </blockquote>

@@ -11,7 +11,7 @@ const icons = {
 
 export function Problem() {
   return (
-    <section aria-labelledby="problema-title" className="bg-card py-20 sm:py-24">
+    <section aria-labelledby="problema-title" className="bg-cream-deep py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           id="problema-title"
@@ -24,7 +24,7 @@ export function Problem() {
             return (
               <li key={p.title}>
                 <Reveal delay={i * 0.08} className="h-full">
-                  <article className="h-full rounded-2xl border bg-cream p-6">
+                  <article className="h-full rounded-2xl border bg-white p-6">
                     <span className="mb-4 inline-flex size-12 items-center justify-center rounded-xl bg-accent text-clay-dark">
                       <Icon className="size-6" aria-hidden="true" />
                     </span>

@@ -38,8 +38,8 @@ export function StoreButtons({
           className={cn(
             "inline-flex h-14 items-center gap-3 rounded-xl px-5 transition-colors",
             tone === "light"
-              ? "bg-cream text-coffee-deep hover:bg-cream-deep"
-              : "bg-coffee-deep text-cream hover:bg-coffee",
+              ? "bg-white text-coffee-deep hover:bg-cream-deep"
+              : "bg-coffee-deep text-white hover:bg-black",
           )}
         >
           <Icon />

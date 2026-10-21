@@ -1,3 +1,4 @@
+import { ChiapasSection } from "@/features/landing/components/chiapas-section";
 import { Benefits } from "@/features/landing/components/benefits";
 import { Faq } from "@/features/landing/components/faq";
 import { Features } from "@/features/landing/components/features";
@@ -18,6 +19,7 @@ export default function Home() {
       <main id="contenido" className="flex-1">
         <Hero />
         <Problem />
+        <ChiapasSection />
         {/* Beneficios y Precios comparten el rol seleccionado */}
         <RoleProvider>
           <Benefits />

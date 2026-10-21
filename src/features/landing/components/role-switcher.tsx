@@ -39,7 +39,7 @@ export function RoleTabs({
           <TabsTrigger
             key={r}
             value={r}
-            className="h-11 rounded-full px-3 text-[0.95rem] text-coffee/75 data-active:bg-coffee data-active:text-cream data-active:shadow-md"
+            className="h-11 rounded-full px-3 text-[0.95rem] text-coffee/75 data-active:bg-leaf data-active:text-white data-active:shadow-md"
           >
             <span className="sm:hidden">{roleLabels[r]}</span>
             <span className="hidden sm:inline">

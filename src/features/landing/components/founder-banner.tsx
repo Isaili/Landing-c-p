@@ -12,7 +12,7 @@ export function FounderBanner({ className }: { className?: string }) {
   return (
     <p
       className={cn(
-        "flex items-center justify-center gap-3 rounded-2xl bg-clay px-5 py-4 text-center font-semibold text-coffee-deep",
+        "flex items-center justify-center gap-3 rounded-2xl border border-clay/30 bg-accent px-5 py-4 text-center font-semibold text-coffee",
         className,
       )}
     >

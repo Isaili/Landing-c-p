@@ -23,6 +23,24 @@ export const hero = {
   },
 };
 
+/** Sección "Hecho en Chiapas": conecta la app con la región */
+export const chiapas = {
+  eyebrow: "Hecho en Chiapas",
+  title: "Pensada para cómo se trabaja el café y la pimienta aquí",
+  description:
+    "Del corte y el secado en patio hasta la venta en el acopio: Grano y Grano hace las cuentas como tú las haces, por kilo, en seco o en verde.",
+  producer: {
+    title: "Si produces",
+    description:
+      "Registra tu cosecha y tu secado, conoce tu rendimiento y publica tus kilos para que los compradores de tu región te encuentren.",
+  },
+  buyer: {
+    title: "Si compras",
+    description:
+      "Lleva el control de cada compra, paga lo justo con la merma bien calculada y encuentra buenos lotes cerca de ti.",
+  },
+};
+
 export const problems = [
   {
     icon: "calculator",

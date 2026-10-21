@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" font-family="Inter, -apple-system, Segoe UI, Roboto, sans-serif">
-  <rect width="560" height="420" fill="#f3eadb"/>
+  <rect width="560" height="420" fill="#f4f7f2"/>
   <rect x="50" y="50" width="460" height="140" rx="24" fill="#fff" stroke="#e6d9c6"/>
   <circle cx="110" cy="120" r="32" fill="#5a3220"/>
   <text x="165" y="104" font-size="20" font-weight="700" fill="#3b2418">Café pergamino · 800 kg</text>

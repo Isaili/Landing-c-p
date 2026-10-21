@@ -43,6 +43,10 @@ Los placeholders están en `public/images/`. Reemplaza el archivo conservando el
 
 Puedes usar `.png`, `.jpg` o `.webp`; solo actualiza la extensión en `content.ts`. Las fotos de testimonios van en `public/images/testimonios/`.
 
+### Fotografías reales
+
+Las fotos de `public/images/fotos/` vienen de Wikimedia Commons con licencias Creative Commons que piden dar crédito. Sus autores, licencias y textos alternativos están en [`data/photos.ts`](src/features/landing/data/photos.ts) y se muestran en la página `/creditos`. Si reemplazas una foto por una propia, actualiza o quita su entrada en ese archivo. Mantén cada foto por debajo de ~350 KB (por ejemplo `sips -Z 1300 -s formatOptions 65 foto.jpg` en macOS).
+
 La imagen para redes sociales (Open Graph) es `public/images/og-image.png` (1200 × 630).
 
 ## Despliegue en GitHub Pages

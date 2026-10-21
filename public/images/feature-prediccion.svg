@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" font-family="Inter, -apple-system, Segoe UI, Roboto, sans-serif">
-  <rect width="560" height="420" fill="#f3eadb"/>
+  <rect width="560" height="420" fill="#f4f7f2"/>
   <rect x="40" y="40" width="480" height="340" rx="24" fill="#fff" stroke="#e6d9c6"/>
   <text x="70" y="84" font-size="15" fill="#6b5547">Precio por kilo · café pergamino</text>
   <text x="70" y="118" font-size="26" font-weight="700" fill="#3b2418">$74 → $79</text>
