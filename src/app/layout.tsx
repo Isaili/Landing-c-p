@@ -52,6 +52,8 @@ export const metadata: Metadata = {
     description,
     images: ["images/og-image.png"],
   },
+  // Google Search Console (propiedad https://isaili.github.io/Landing-c-p/)
+  verification: { google: "DWVN3hlphESGq9HUjcpQoZcgOqIN94qvmTKreQuh4HQ" },
 };
 
 export const viewport: Viewport = {
