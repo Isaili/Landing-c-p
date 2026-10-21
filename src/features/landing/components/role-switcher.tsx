@@ -33,7 +33,7 @@ export function RoleTabs({
     >
       <TabsList
         aria-label={label}
-        className="h-auto! w-full max-w-md rounded-full border bg-cream-deep p-1"
+        className="h-auto! w-full max-w-md rounded-full border bg-muted p-1"
       >
         {roles.map((r) => (
           <TabsTrigger

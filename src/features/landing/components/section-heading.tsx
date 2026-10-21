@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
@@ -6,7 +7,6 @@ interface SectionHeadingProps {
   title: string;
   description?: string;
   align?: "center" | "left";
-  tone?: "dark" | "light";
   className?: string;
 }
 
@@ -16,46 +16,24 @@ export function SectionHeading({
   title,
   description,
   align = "center",
-  tone = "dark",
   className,
 }: SectionHeadingProps) {
-  const light = tone === "light";
   return (
-    <div
-      className={cn(
-        "max-w-2xl",
-        align === "center" && "mx-auto text-center",
-        className,
-      )}
-    >
+    <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && (
-        <p
-          className={cn(
-            "mb-3 text-sm font-semibold tracking-wide uppercase",
-            light ? "text-clay" : "text-clay-dark",
-          )}
+        <Badge
+          variant="outline"
+          className="mb-4 h-7 gap-1.5 border-leaf/20 bg-white px-3 text-xs font-semibold tracking-wide text-leaf uppercase"
         >
+          <span className="size-1.5 rounded-full bg-leaf" aria-hidden="true" />
           {eyebrow}
-        </p>
+        </Badge>
       )}
-      <h2
-        id={id}
-        className={cn(
-          "text-3xl font-semibold sm:text-4xl",
-          light ? "text-cream" : "text-coffee",
-        )}
-      >
+      <h2 id={id} className="text-3xl font-semibold text-coffee sm:text-[2.6rem] sm:leading-[1.12]">
         {title}
       </h2>
       {description && (
-        <p
-          className={cn(
-            "mt-4 text-lg text-pretty",
-            light ? "text-cream/80" : "text-muted-foreground",
-          )}
-        >
-          {description}
-        </p>
+        <p className="mt-4 text-lg text-pretty text-muted-foreground">{description}</p>
       )}
     </div>
   );

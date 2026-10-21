@@ -1,21 +1,19 @@
 import Image from "next/image";
 import { MapPinIcon, SparklesIcon } from "lucide-react";
+import { Card } from "@/components/ui/card";
 import { finalCta } from "../data/content";
 import { photos } from "../data/photos";
 import { asset } from "../lib/asset";
 import { founderText } from "./founder-banner";
+import { LandingSection } from "./landing-section";
 import { StoreButtons } from "./store-buttons";
 
 export function FinalCta() {
   const photo = photos.unionJuarez;
 
   return (
-    <section
-      id="descargar"
-      aria-labelledby="descargar-title"
-      className="scroll-mt-16 bg-white px-4 py-20 sm:px-6 sm:py-24"
-    >
-      <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[2rem] border bg-white shadow-xl shadow-leaf/10 md:grid-cols-2">
+    <LandingSection id="descargar" labelledBy="descargar-title">
+      <Card className="grid gap-0 py-0 shadow-xl shadow-black/5 md:grid-cols-2">
         <figure className="relative min-h-64 md:min-h-full">
           <Image
             src={asset(photo.src)}
@@ -36,12 +34,12 @@ export function FinalCta() {
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">{finalCta.subtitle}</p>
           <StoreButtons className="mt-8" />
-          <p className="mt-8 inline-flex items-start gap-2 rounded-2xl border border-clay/30 bg-accent px-4 py-3 text-sm font-medium text-coffee">
+          <p className="mt-8 flex items-start gap-2 text-sm font-medium text-coffee/80">
             <SparklesIcon className="mt-0.5 size-4 shrink-0 text-clay-dark" aria-hidden="true" />
             {founderText}
           </p>
         </div>
-      </div>
-    </section>
+      </Card>
+    </LandingSection>
   );
 }

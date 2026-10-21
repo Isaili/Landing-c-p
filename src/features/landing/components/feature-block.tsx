@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { asset } from "../lib/asset";
 import { ComingSoonBadge } from "./coming-soon-badge";
@@ -26,24 +28,23 @@ export function FeatureBlock({
   const reversed = index % 2 === 1;
   return (
     <Reveal>
-      <article className="grid items-center gap-8 md:grid-cols-2 md:gap-14">
+      <article className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
         <div className={cn(reversed && "md:order-2")}>
-          <p className="flex flex-wrap items-center gap-2 text-sm font-semibold tracking-wide text-clay-dark uppercase">
-            <span
-              aria-hidden="true"
-              className="inline-flex size-7 items-center justify-center rounded-full bg-leaf text-xs text-white"
-            >
-              {index + 1}
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge className="h-6 bg-leaf px-2.5 font-semibold text-white">
+              {String(index + 1).padStart(2, "0")}
+            </Badge>
+            <span className="text-sm font-semibold tracking-wide text-leaf uppercase">
+              {eyebrow}
             </span>
-            {eyebrow}
-            {comingSoon && <ComingSoonBadge className="normal-case" />}
-          </p>
-          <h3 className="mt-4 text-2xl font-semibold text-coffee sm:text-3xl">{title}</h3>
-          <p className="mt-3 text-lg text-muted-foreground">{description}</p>
+            {comingSoon && <ComingSoonBadge />}
+          </div>
+          <h3 className="mt-5 text-2xl font-semibold text-coffee sm:text-3xl">{title}</h3>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{description}</p>
         </div>
-        <div
+        <Card
           className={cn(
-            "overflow-hidden rounded-3xl border bg-cream-deep",
+            "gap-0 py-0 shadow-lg shadow-black/5",
             reversed && "md:order-1",
           )}
         >
@@ -55,7 +56,7 @@ export function FeatureBlock({
             loading="lazy"
             className="h-auto w-full"
           />
-        </div>
+        </Card>
       </article>
     </Reveal>
   );

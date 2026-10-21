@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDownIcon, CheckIcon, MapPinIcon } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { hero } from "../data/content";
@@ -14,14 +15,17 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-white pt-28 pb-20 sm:pt-32 lg:pb-28"
+      className="relative overflow-hidden bg-white pt-28 pb-20 sm:pt-36 lg:pb-28"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr]">
         <div className="text-center lg:text-left">
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-leaf-soft px-3 py-1 text-sm font-medium text-secondary-foreground">
-            <MapPinIcon className="size-4" aria-hidden="true" />
+          <Badge
+            variant="outline"
+            className="mb-6 h-7 gap-1.5 border-leaf/20 px-3 text-sm font-medium text-leaf"
+          >
+            <MapPinIcon aria-hidden="true" />
             Para compradores y productores de Chiapas
-          </p>
+          </Badge>
           <h1
             id="hero-title"
             className="text-4xl leading-[1.08] font-semibold text-coffee sm:text-5xl lg:text-6xl"
@@ -60,7 +64,7 @@ export function Hero() {
 
         {/* Foto real de un cafetal en Chiapas + mockup de la app */}
         <div className="relative mx-auto w-full max-w-md pb-10 pl-10 sm:pl-16 lg:max-w-none">
-          <figure className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-leaf/20">
+          <figure className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl shadow-black/15 ring-1 ring-black/5">
             <Image
               src={asset(photo.src)}
               alt={photo.alt}

@@ -42,7 +42,7 @@ export function ComparisonTable({
   const names = Object.fromEntries(plans.map((p) => [p.id, p.name]));
 
   return (
-    <div className="overflow-hidden rounded-2xl border bg-card">
+    <div className="overflow-hidden rounded-xl bg-card shadow-sm ring-1 ring-foreground/10">
       <Table className="min-w-[560px]">
         <caption className="border-b px-4 py-3 text-left font-heading text-lg font-semibold text-coffee">
           {caption}

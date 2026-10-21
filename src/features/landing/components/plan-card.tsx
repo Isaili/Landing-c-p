@@ -1,6 +1,17 @@
 import Link from "next/link";
 import { CheckIcon } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { comingSoonLabel, paymentsEnabled } from "../data/plans";
 import { formatPrice, monthlyEquivalent } from "../lib/format-price";
@@ -14,32 +25,38 @@ export function PlanCard({ plan, billing }: { plan: Plan; billing: Billing }) {
   const titleId = `plan-${plan.id}-title`;
 
   return (
-    <article
+    <Card
       aria-labelledby={titleId}
       className={cn(
-        "relative flex h-full flex-col rounded-3xl border bg-card p-6 sm:p-7",
-        plan.highlighted && "border-2 border-leaf shadow-xl shadow-leaf/10",
+        "h-full gap-6 py-7 shadow-sm",
+        plan.highlighted && "shadow-xl shadow-leaf/10 ring-2 ring-leaf",
       )}
     >
-      {plan.badge && (
-        <span
-          className={cn(
-            "absolute -top-3.5 left-6 rounded-full px-3 py-1 text-xs font-semibold",
-            plan.highlighted ? "bg-leaf text-white" : "bg-accent text-clay-dark ring-1 ring-clay/30",
-          )}
-        >
-          {plan.badge}
-        </span>
-      )}
+      <CardHeader className="px-7">
+        <CardTitle id={titleId} className="text-2xl font-semibold text-coffee">
+          {plan.name}
+        </CardTitle>
+        <CardDescription className="text-[0.95rem]">{plan.tagline}</CardDescription>
+        {plan.badge && (
+          <CardAction>
+            <Badge
+              className={cn(
+                "h-6 px-2.5 font-semibold",
+                plan.highlighted
+                  ? "bg-leaf text-white"
+                  : "border-clay/30 bg-accent text-clay-dark",
+              )}
+              variant={plan.highlighted ? "default" : "outline"}
+            >
+              {plan.badge}
+            </Badge>
+          </CardAction>
+        )}
+      </CardHeader>
 
-      <h3 id={titleId} className="text-2xl font-semibold text-coffee">
-        {plan.name}
-      </h3>
-      <p className="mt-1 text-muted-foreground">{plan.tagline}</p>
-
-      <div className="mt-6">
+      <CardContent className="px-7">
         <p className="flex items-baseline gap-1.5">
-          <span className="font-heading text-4xl font-semibold text-coffee">
+          <span className="font-heading text-[2.6rem] leading-none font-semibold text-coffee">
             {formatPrice(price)}
           </span>
           {!isFree && (
@@ -50,48 +67,49 @@ export function PlanCard({ plan, billing }: { plan: Plan; billing: Billing }) {
             </span>
           )}
         </p>
-        <p className="mt-1 min-h-5 text-sm text-muted-foreground">
+        <p className="mt-2 min-h-5 text-sm text-muted-foreground">
           {isFree
             ? "Gratis para siempre"
             : yearly
               ? `Equivale a ${formatPrice(monthlyEquivalent(plan.priceYearly))} al mes`
               : `O ${formatPrice(plan.priceYearly)} al año`}
         </p>
-      </div>
 
-      <ul className="mt-6 flex flex-1 flex-col gap-3">
-        {plan.highlights.map((h) => (
-          <li key={h} className="flex gap-2.5">
-            <CheckIcon className="mt-0.5 size-5 shrink-0 text-leaf" aria-hidden="true" />
-            <span>{h}</span>
-          </li>
-        ))}
-      </ul>
+        <Separator className="my-6" />
 
-      {available ? (
-        <Link
-          href="/#descargar"
-          className={cn(
-            buttonVariants({
-              size: "xl",
-              variant: plan.highlighted ? "default" : "outline",
-            }),
-            "mt-8 w-full",
-          )}
-        >
-          {plan.cta}
-        </Link>
-      ) : (
-        <span
-          aria-disabled="true"
-          className={cn(
-            buttonVariants({ size: "xl", variant: "secondary" }),
-            "mt-8 w-full cursor-not-allowed bg-muted text-muted-foreground hover:bg-muted",
-          )}
-        >
-          {comingSoonLabel}
-        </span>
-      )}
-    </article>
+        <ul className="flex flex-col gap-3 text-[0.95rem]">
+          {plan.highlights.map((h) => (
+            <li key={h} className="flex gap-2.5">
+              <CheckIcon className="mt-0.5 size-5 shrink-0 text-leaf" aria-hidden="true" />
+              <span>{h}</span>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+
+      <CardFooter className="mt-auto border-0 bg-transparent px-7 pt-2 pb-0">
+        {available ? (
+          <Link
+            href="/#descargar"
+            className={cn(
+              buttonVariants({ size: "xl", variant: plan.highlighted ? "default" : "outline" }),
+              "w-full",
+            )}
+          >
+            {plan.cta}
+          </Link>
+        ) : (
+          <span
+            aria-disabled="true"
+            className={cn(
+              buttonVariants({ size: "xl", variant: "outline" }),
+              "w-full cursor-not-allowed border-dashed text-muted-foreground hover:bg-transparent hover:text-muted-foreground",
+            )}
+          >
+            {comingSoonLabel}
+          </span>
+        )}
+      </CardFooter>
+    </Card>
   );
 }

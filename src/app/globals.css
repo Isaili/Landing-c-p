@@ -53,7 +53,8 @@
   --leaf-soft: #e6f0e6;
   /* Fondos: blanco y un gris verdoso muy suave para alternar secciones */
   --cream: #ffffff;
-  --cream-deep: #f4f7f2;
+  /* Gris neutro muy suave, solo para rellenos de componentes (no secciones) */
+  --cream-deep: #f6f7f5;
   --clay: #c8743a;
   /* Variante oscura del acento para texto sobre blanco (contraste AA) */
   --clay-dark: #9a4f1c;
@@ -74,8 +75,8 @@
   --accent: #fcf0e6;
   --accent-foreground: var(--coffee);
   --destructive: #b42318;
-  --border: #e2e7de;
-  --input: #e2e7de;
+  --border: #e7e9e4;
+  --input: #e7e9e4;
   --ring: var(--clay);
   --radius: 0.75rem;
 }
