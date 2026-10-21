@@ -15,9 +15,9 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-const title = "Grano y Grano · Compra y vende café y pimienta con números claros";
+const title = "Grano y Grano · Compra, vende café y pimienta con números claros";
 const description =
-  "App para compradores y productores de café y pimienta en Chiapas. Calcula la merma al instante, controla tu inversión y conecta con tu región. Gratis para empezar.";
+  "App para compradores, productores de café y pimienta en Chiapas. Calcula la merma al instante, controla tu inversión y conecta con tu región. Gratis para empezar.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE_URL}/`),
