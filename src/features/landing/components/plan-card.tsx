@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { ANDROID_APK_URL } from "../data/links";
 import { comingSoonLabel, paymentsEnabled } from "../data/plans";
 import { formatPrice, monthlyEquivalent } from "../lib/format-price";
 import type { Billing, Plan } from "../types";
@@ -90,7 +91,7 @@ export function PlanCard({ plan, billing }: { plan: Plan; billing: Billing }) {
       <CardFooter className="mt-auto border-0 bg-transparent px-7 pt-2 pb-0">
         {available ? (
           <Link
-            href="/#descargar"
+            href={isFree ? ANDROID_APK_URL : "/#descargar"}
             className={cn(
               buttonVariants({ size: "xl", variant: plan.highlighted ? "default" : "outline" }),
               "w-full",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Footer } from "@/features/landing/components/footer";
 import { Header } from "@/features/landing/components/header";
+import { coffeeProcess, pepperProcess } from "@/features/landing/data/gallery";
 import { photos } from "@/features/landing/data/photos";
 
 export const metadata: Metadata = {
@@ -21,7 +22,13 @@ export default function Creditos() {
             Creative Commons. Gracias a sus autores.
           </p>
           <ul className="mt-8 divide-y rounded-2xl border">
-            {Object.values(photos).map((p) => (
+            {[
+              ...Object.values(photos),
+              ...[...coffeeProcess, ...pepperProcess].map((g) => ({
+                ...g,
+                caption: `Galería · ${g.title} (${g.place})`,
+              })),
+            ].map((p) => (
               <li key={p.src} className="p-5">
                 <p className="font-semibold text-coffee">{p.caption}</p>
                 <p className="mt-1 text-sm text-muted-foreground">

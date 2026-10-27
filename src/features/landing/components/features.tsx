@@ -20,9 +20,8 @@ export function Features() {
             eyebrow={f.eyebrow}
             title={f.title}
             description={f.description}
-            image={f.image}
-            alt={f.alt}
-            comingSoon={"comingSoon" in f ? f.comingSoon : false}
+            media={f.media}
+            comingSoon={f.comingSoon}
           />
         ))}
       </div>

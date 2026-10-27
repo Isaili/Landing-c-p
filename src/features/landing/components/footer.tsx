@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
-import { CONTACT_EMAIL, SOCIAL_LINKS, type SocialNetwork } from "../data/links";
+import { CONTACT_EMAIL, SOCIAL_LINKS, SOFTVANA_URL, type SocialNetwork } from "../data/links";
 import { Logo } from "./logo";
 
 const BUILD_YEAR = new Date().getFullYear();
@@ -43,7 +43,16 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-3 text-muted-foreground">
-            Desarrollado por Softvana · Chiapas, México
+            Desarrollado por{" "}
+            <a
+              href={SOFTVANA_URL}
+              target="_blank"
+              rel="noopener"
+              className="font-medium text-leaf underline-offset-4 hover:underline"
+            >
+              Softvana
+            </a>{" "}
+            · Chiapas, México
           </p>
         </div>
 

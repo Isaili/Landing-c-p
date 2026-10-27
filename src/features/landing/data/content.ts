@@ -1,4 +1,5 @@
 import type { Role } from "../types";
+import { photos, type Photo } from "./photos";
 
 /** Textos de las secciones de la landing (sin precios; esos viven en plans.ts) */
 
@@ -14,9 +15,11 @@ export const hero = {
   title: "Compra y vende café y pimienta con números claros",
   subtitle:
     "Calcula la merma al instante, controla tu inversión y conecta con compradores y productores de tu región.",
-  primaryCta: "Descargar gratis",
+  primaryCta: "Descargar para Android",
   secondaryCta: "Ver planes",
   trust: ["Gratis para empezar", "Sin tarjeta", "Hecho en Chiapas"],
+  /** Nota bajo los botones del hero */
+  storesNote: "iPhone y Google Play: muy pronto",
   mockup: {
     src: "/images/app-mockup.svg",
     alt: "Pantalla de la app Grano y Grano calculando kilos netos y total a pagar de una compra de café",
@@ -121,15 +124,36 @@ export const benefits: Record<
   ],
 };
 
-export const features = [
+/**
+ * Imagen de cada función:
+ * - "app": captura real de la app (public/images/app/, sacadas de los goldens de pimez/test)
+ * - "representativa": foto de apoyo cuando la función aún no tiene pantalla; se marca como tal
+ */
+export type FeatureMedia =
+  | { kind: "app"; src: string; alt: string; width: number; height: number }
+  | { kind: "representativa"; photo: Photo; fit?: "cover" | "contain" };
+
+export const features: {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  media: FeatureMedia;
+  comingSoon?: boolean;
+}[] = [
   {
     id: "merma",
     eyebrow: "Cálculo de merma",
     title: "La merma, calculada sin errores",
     description:
       "Captura los kilos, elige si es seco o verde y la app te da los kilos netos y el total a pagar. Sin calculadora, sin libreta.",
-    image: "/images/feature-merma.svg",
-    alt: "Ejemplo de cálculo de merma: 520 kilos en verde se convierten en 426 kilos netos",
+    media: {
+      kind: "app",
+      src: "/images/app/merma.png",
+      alt: "Pantalla Nueva compra de la app: café seco, 320 kg brutos a $88 por kilo, 18 kg de merma y total a pagar de $26,846",
+      width: 390,
+      height: 780,
+    },
   },
   {
     id: "estadisticas",
@@ -137,27 +161,36 @@ export const features = [
     title: "Sabe cuánto llevas invertido",
     description:
       "Mira tu inversión total, el precio promedio por kilo y qué tanto compras en seco o en verde, semana con semana.",
-    image: "/images/feature-estadisticas.svg",
-    alt: "Gráfica de barras de inversión semanal y gráfica circular de proporción seco y verde",
+    media: {
+      kind: "app",
+      src: "/images/app/dashboard.png",
+      alt: "Pantalla de inicio de la app con inversión total de $71,632 en 30 días, gráfica de crecimiento, 930 kg netos y precio promedio de $77.02 por kilo",
+      width: 390,
+      height: 780,
+    },
   },
   {
     id: "prediccion",
     eyebrow: "Predicción con inteligencia artificial",
     title: "Adelántate al precio",
     description:
-      "Con tus datos y los del mercado, la app estima hacia dónde va el precio y cuánta merma esperar, para que decidas cuándo comprar o vender.",
-    image: "/images/feature-prediccion.svg",
-    alt: "Gráfica de línea con el precio histórico y una proyección punteada de los próximos días",
+      "El precio del café sube y baja todo el tiempo. Con tus datos y los del mercado, la app estima hacia dónde va el precio y cuánta merma esperar, para que decidas cuándo comprar o vender.",
+    media: { kind: "representativa", photo: photos.precioCafe, fit: "contain" },
   },
   {
     id: "mercado",
     eyebrow: "Mercado de lotes",
     title: "Lotes y subastas en un solo lugar",
     description:
-      "Los productores publican sus lotes y los compradores pujan. Todo queda registrado y el trato se cierra dentro de la app.",
-    image: "/images/feature-mercado.svg",
+      "Los productores publican sus lotes con kilos, precio y descripción. Pronto los compradores podrán pujar y el trato se cerrará dentro de la app.",
     comingSoon: true,
-    alt: "Tarjetas de lotes de café y pimienta con tiempo restante y puja actual",
+    media: {
+      kind: "app",
+      src: "/images/app/lotes.png",
+      alt: "Pantalla Mis lotes de la app: lote activo de 250 kg de café seco a $92 por kilo y lote vendido de 180 kg de pimienta",
+      width: 390,
+      height: 780,
+    },
   },
   {
     id: "optimizacion",
@@ -165,10 +198,9 @@ export const features = [
     title: "Te dice en qué lotes conviene pujar",
     description:
       "Le dices tu presupuesto y la app, usando algoritmos genéticos, te recomienda la mejor combinación de lotes para sacarle más a tu dinero.",
-    image: "/images/feature-optimizacion.svg",
-    alt: "Presupuesto disponible con tres lotes recomendados marcados",
+    media: { kind: "representativa", photo: photos.seleccionCafe },
   },
-] as const;
+];
 
 export const marketSteps = [
   {

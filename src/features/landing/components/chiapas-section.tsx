@@ -6,8 +6,10 @@ import { chiapas } from "../data/content";
 import { photos, type Photo } from "../data/photos";
 import { asset } from "../lib/asset";
 import { LandingSection } from "./landing-section";
+import { ProcessGallery } from "./process-gallery";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./section-heading";
+import { VideoDialog } from "./video-dialog";
 
 /** Galería: en escritorio 4 columnas × 2 filas, en celular 2 columnas × 3 filas */
 const gallery: { photo: Photo; className: string }[] = [
@@ -52,7 +54,12 @@ export function ChiapasSection() {
         ))}
       </ul>
 
-      <div className="mt-6 grid gap-5 md:grid-cols-2">
+      <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <ProcessGallery />
+        <VideoDialog />
+      </div>
+
+      <div className="mt-10 grid gap-5 md:grid-cols-2">
         {audiences.map(({ icon: Icon, title, description }, i) => (
           <Reveal key={title} delay={i * 0.08}>
             <Card className="h-full py-6 shadow-sm">

@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownIcon, CheckIcon, MapPinIcon } from "lucide-react";
+import { ArrowDownIcon, CheckIcon, DownloadIcon, MapPinIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { hero } from "../data/content";
+import { ANDROID_APK_URL } from "../data/links";
 import { photos } from "../data/photos";
 import { asset } from "../lib/asset";
 import { HeroSceneLoader } from "./hero-scene-loader";
@@ -37,9 +38,10 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
-            <Link href="/#descargar" className={buttonVariants({ size: "xl" })}>
+            <a href={ANDROID_APK_URL} download className={buttonVariants({ size: "xl" })}>
+              <DownloadIcon aria-hidden="true" />
               {hero.primaryCta}
-            </Link>
+            </a>
             <Link
               href="/#precios"
               className={cn(
@@ -60,6 +62,7 @@ export function Hero() {
               </li>
             ))}
           </ul>
+          <p className="mt-3 text-sm text-muted-foreground">{hero.storesNote}</p>
         </div>
 
         {/* Foto real de un cafetal en Chiapas + mockup de la app */}

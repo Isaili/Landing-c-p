@@ -97,4 +97,27 @@ export const photos = {
     width: 1300,
     height: 866,
   },
+  // Imágenes representativas (no son de la app ni de Chiapas): se marcan como tales en la landing
+  precioCafe: {
+    src: "/images/fotos/precio-cafe-historico.jpg",
+    alt: "Gráfica del precio internacional del café de 2005 a 2022: pasa de 1 a 3 dólares por libra y vuelve a bajar varias veces",
+    caption: "Precio internacional del café, 2005–2022 (dólares por libra)",
+    author: "Wikideas1",
+    license: "CC0",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    source: "https://commons.wikimedia.org/wiki/File:Coffee-prices-historical-chart-data.webp",
+    width: 1400,
+    height: 729,
+  },
+  seleccionCafe: {
+    src: "/images/fotos/seleccion-cafe.jpg",
+    alt: "Dos manos sobre un patio de secado: en una, granos de café de buena calidad; en la otra, granos de rechazo",
+    caption: "Elegir lo que más conviene: café de calidad contra rechazo",
+    author: "Harald Ulver",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    source: "https://commons.wikimedia.org/wiki/File:Coffee_Bean_Quality_Sorting_Comparison_-_Tanzania.jpg",
+    width: 1400,
+    height: 933,
+  },
 } satisfies Record<string, Photo>;

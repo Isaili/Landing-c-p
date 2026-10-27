@@ -39,7 +39,9 @@ Los placeholders están en `public/images/`. Reemplaza el archivo conservando el
 | Archivo | Dónde aparece | Tamaño sugerido |
 |---|---|---|
 | `app-mockup.svg` | Teléfono del hero | 300 × 620 (o proporción similar) |
-| `feature-*.svg` | Bloques de funciones | 560 × 420 (4:3) |
+| `app/*.png` | Pantallas reales en "Cómo funciona" | 390 × 780 |
+
+Las pantallas de `public/images/app/` se recortaron de las capturas "golden" de la app (`pimez/test/goldens/`). Para actualizarlas, vuelve a generar los goldens en el proyecto de Flutter y recorta la parte superior a 390 × 780. Las funciones que aún no tienen pantalla usan una foto marcada como "Imagen representativa" (se configura en `features` dentro de `data/content.ts`).
 
 Puedes usar `.png`, `.jpg` o `.webp`; solo actualiza la extensión en `content.ts`. Las fotos de testimonios van en `public/images/testimonios/`.
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MenuIcon } from "lucide-react";
+import { DownloadIcon, MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import {
@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { navItems } from "../data/content";
+import { ANDROID_APK_URL } from "../data/links";
 import { Logo } from "./logo";
 
 export function MobileNav() {
@@ -51,13 +52,18 @@ export function MobileNav() {
           </ul>
         </nav>
         <div className="mt-auto p-5">
-          <Link
-            href="/#descargar"
+          <a
+            href={ANDROID_APK_URL}
+            download
             onClick={close}
             className={cn(buttonVariants({ size: "xl" }), "w-full")}
           >
-            Descargar app
-          </Link>
+            <DownloadIcon aria-hidden="true" />
+            Descargar para Android
+          </a>
+          <p className="mt-2 text-center text-xs text-muted-foreground">
+            Muy pronto en App Store y Google Play
+          </p>
         </div>
       </SheetContent>
     </Sheet>

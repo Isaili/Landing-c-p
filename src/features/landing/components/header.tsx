@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { DownloadIcon } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { navItems } from "../data/content";
+import { ANDROID_APK_URL } from "../data/links";
 import { Logo } from "./logo";
 import { MobileNav } from "./mobile-nav";
 
@@ -54,15 +56,17 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            href="/#descargar"
+          <a
+            href={ANDROID_APK_URL}
+            download
             className={cn(
               buttonVariants({ size: "lg" }),
               "hidden h-10 rounded-xl px-4 sm:inline-flex",
             )}
           >
+            <DownloadIcon aria-hidden="true" />
             Descargar app
-          </Link>
+          </a>
           <MobileNav />
         </div>
       </div>
