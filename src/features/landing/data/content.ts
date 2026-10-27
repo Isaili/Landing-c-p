@@ -29,9 +29,9 @@ export const hero = {
 /** Sección "Hecho en Chiapas": conecta la app con la región */
 export const chiapas = {
   eyebrow: "Hecho en Chiapas",
-  title: "Pensada para cómo se trabaja el café y la pimienta aquí",
+  title: "Pensada para la forma en que se trabaja el café y la pimienta aquí",
   description:
-    "Del corte y el secado en patio hasta la venta en el acopio: Grano y Grano hace las cuentas como tú las haces, por kilo, en seco o en verde.",
+    "Del corte y el secado en patio hasta la venta en el acopio, Grano y Grano lleva las cuentas como tú las necesitas: por kilo, en seco o en verde.",
   producer: {
     title: "Si produces",
     description:
@@ -55,7 +55,7 @@ export const problems = [
     icon: "notebook",
     title: "Sin historial no hay control",
     description:
-      "Compras y ventas regadas en papeles: no sabes cuánto llevas invertido ni a qué precio promedio.",
+      "¿Compras y ventas regadas en papeles? No sabes cuánto llevas invertido ni a qué precio promedio.",
   },
   {
     icon: "handshake",
@@ -144,7 +144,7 @@ export const features: {
   {
     id: "merma",
     eyebrow: "Cálculo de merma",
-    title: "La merma, calculada sin errores",
+    title: "La merma calculada sin errores",
     description:
       "Captura los kilos, elige si es seco o verde y la app te da los kilos netos y el total a pagar. Sin calculadora, sin libreta.",
     media: {
@@ -205,7 +205,7 @@ export const features: {
 export const marketSteps = [
   {
     title: "El productor publica su lote",
-    description: "Indica producto, kilos, calidad y, si quiere, un precio mínimo.",
+    description: "Indica el producto, los kilos, la calidad y, opcionalmente, un precio mínimo.",
   },
   {
     title: "24 a 48 horas solo para Max",
@@ -217,7 +217,7 @@ export const marketSteps = [
   },
   {
     title: "Se cierra la venta",
-    description: "El comprador paga una comisión pequeña: 2 %, o 1 % si es Max.",
+    description: "El comprador paga una comisión pequeña: 2 % o 1 % si es Max.",
   },
 ] as const;
 
