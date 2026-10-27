@@ -2,7 +2,8 @@ import type { HarvestPass, PlanId, Role, RolePricing } from "../types";
 
 /**
  * Precios, planes y tablas comparativas.
- * Todos los montos están en pesos mexicanos (MXN), sin decimales.
+ * Todos los montos están en dólares estadounidenses (USD), con centavos (19.99).
+ * Conversión de referencia: 17.5 MXN por dólar, redondeado a .99.
  * Cambia aquí los valores y la página se actualiza sola.
  */
 
@@ -11,6 +12,9 @@ import type { HarvestPass, PlanId, Role, RolePricing } from "../types";
  * Platino y Max dicen "Próximamente". Cámbialo a true cuando haya pagos.
  */
 export const paymentsEnabled = false;
+
+/** Moneda que se muestra junto a los precios */
+export const currency = "USD";
 export const comingSoonLabel = "Próximamente";
 
 export const pricing: Record<Role, RolePricing> = {
@@ -33,8 +37,8 @@ export const pricing: Record<Role, RolePricing> = {
         id: "platino",
         name: "Platino",
         tagline: "Compra con datos, no a ojo",
-        priceMonthly: 349,
-        priceYearly: 3490,
+        priceMonthly: 19.99,
+        priceYearly: 199.99,
         cta: "Prueba Platino",
         highlighted: true,
         badge: "Más popular",
@@ -49,8 +53,8 @@ export const pricing: Record<Role, RolePricing> = {
         id: "max",
         name: "Max",
         tagline: "Los mejores lotes, primero para ti",
-        priceMonthly: 999,
-        priceYearly: 9990,
+        priceMonthly: 56.99,
+        priceYearly: 569.99,
         cta: "Quiero Max",
         badge: "Más completo",
         highlights: [
@@ -96,8 +100,8 @@ export const pricing: Record<Role, RolePricing> = {
         id: "platino",
         name: "Platino",
         tagline: "Conoce tu rendimiento",
-        priceMonthly: 89,
-        priceYearly: 890,
+        priceMonthly: 4.99,
+        priceYearly: 49.99,
         cta: "Prueba Platino",
         highlighted: true,
         badge: "Más popular",
@@ -112,8 +116,8 @@ export const pricing: Record<Role, RolePricing> = {
         id: "max",
         name: "Max",
         tagline: "Vende al mejor precio",
-        priceMonthly: 229,
-        priceYearly: 2290,
+        priceMonthly: 12.99,
+        priceYearly: 129.99,
         cta: "Quiero Max",
         badge: "Más completo",
         highlights: [
@@ -161,8 +165,8 @@ export const pricing: Record<Role, RolePricing> = {
         id: "platino",
         name: "Paquete Platino",
         tagline: "Platino en los dos roles",
-        priceMonthly: 399,
-        priceYearly: 3990,
+        priceMonthly: 22.99,
+        priceYearly: 229.99,
         cta: "Prueba Platino",
         highlighted: true,
         badge: "Más popular",
@@ -176,8 +180,8 @@ export const pricing: Record<Role, RolePricing> = {
         id: "max",
         name: "Paquete Max",
         tagline: "Max en los dos roles",
-        priceMonthly: 1099,
-        priceYearly: 10990,
+        priceMonthly: 62.99,
+        priceYearly: 629.99,
         cta: "Quiero Max",
         badge: "Más completo",
         highlights: [
@@ -196,13 +200,13 @@ export const harvestPasses: HarvestPass[] = [
   {
     name: "Pase Max Café",
     durationMonths: 5,
-    price: 4990,
+    price: 284.99,
     description: "Todo lo de Max durante la temporada de café.",
   },
   {
     name: "Pase Max Pimienta",
     durationMonths: 3,
-    price: 2990,
+    price: 169.99,
     description: "Todo lo de Max durante la temporada de pimienta.",
   },
 ];

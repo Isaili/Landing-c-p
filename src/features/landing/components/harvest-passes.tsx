@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { harvestPasses } from "../data/plans";
-import { formatPriceMxn } from "../lib/format-price";
+import { formatPriceWithCurrency } from "../lib/format-price";
 
 export function HarvestPasses() {
   return (
@@ -37,7 +37,7 @@ export function HarvestPasses() {
               </CardHeader>
               <CardContent className="flex items-baseline justify-between gap-3 px-6">
                 <span className="font-heading text-3xl font-semibold text-coffee">
-                  {formatPriceMxn(pass.price)}
+                  {formatPriceWithCurrency(pass.price)}
                 </span>
                 <Badge variant="outline" className="h-6 px-2.5">
                   {pass.durationMonths} meses

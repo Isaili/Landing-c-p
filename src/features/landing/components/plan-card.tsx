@@ -14,7 +14,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { ANDROID_APK_URL } from "../data/links";
-import { comingSoonLabel, paymentsEnabled } from "../data/plans";
+import { comingSoonLabel, currency, paymentsEnabled } from "../data/plans";
 import { formatPrice, monthlyEquivalent } from "../lib/format-price";
 import type { Billing, Plan } from "../types";
 
@@ -62,7 +62,7 @@ export function PlanCard({ plan, billing }: { plan: Plan; billing: Billing }) {
           </span>
           {!isFree && (
             <span className="text-muted-foreground">
-              MXN<span aria-hidden="true">/</span>
+              {currency}<span aria-hidden="true">/</span>
               <span className="sr-only"> al </span>
               {yearly ? "año" : "mes"}
             </span>

@@ -10,7 +10,7 @@ export interface Plan {
   name: string;
   /** Frase corta bajo el nombre del plan */
   tagline: string;
-  /** Precio en MXN; 0 = gratis */
+  /** Precio en USD (ej. 19.99); 0 = gratis */
   priceMonthly: number;
   priceYearly: number;
   cta: string;

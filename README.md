@@ -20,7 +20,7 @@ Todo vive en [`src/features/landing/data/plans.ts`](src/features/landing/data/pl
 - `paymentsEnabled`: mientras sea `false`, los botones de Platino y Max dicen "Próximamente". Cámbialo a `true` cuando haya pagos.
 - `harvestPasses`, `commission`, `founderOffer`, `trialDays` y `yearlyBadge`.
 
-Los montos son números en MXN sin decimales (`3490`), el formato `$3,490 MXN` se aplica solo.
+Los montos son números en dólares (USD) con centavos (`19.99`); el formato `$19.99 USD` se aplica solo. La moneda que se muestra se cambia en `currency`.
 
 ## Cambiar enlaces
 

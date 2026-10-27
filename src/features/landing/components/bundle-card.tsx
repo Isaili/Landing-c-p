@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { useRole } from "../context/role-context";
-import { pricing } from "../data/plans";
+import { currency, pricing } from "../data/plans";
 import { formatPrice } from "../lib/format-price";
 import type { Billing } from "../types";
 
@@ -32,7 +32,7 @@ export function BundleCard({ billing }: { billing: Billing }) {
             {bundlePlans.map((p) => (
               <li key={p.id}>
                 {p.name.replace("Paquete ", "")}:{" "}
-                {formatPrice(yearly ? p.priceYearly : p.priceMonthly)} MXN/
+                {formatPrice(yearly ? p.priceYearly : p.priceMonthly)} {currency}/
                 {yearly ? "año" : "mes"}
               </li>
             ))}

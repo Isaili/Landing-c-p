@@ -67,7 +67,7 @@ export function Pricing() {
         id="precios-title"
         eyebrow="Precios"
         title="Empieza gratis y crece cuando lo necesites"
-        description="Precios en pesos mexicanos. Cambia de plan o cancela cuando quieras."
+        description="Precios en dólares estadounidenses (USD). Cambia de plan o cancela cuando quieras."
       />
 
       <RoleTabs label="Ver precios para" className="mt-10">

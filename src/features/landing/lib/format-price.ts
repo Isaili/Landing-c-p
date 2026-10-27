@@ -1,18 +1,24 @@
-const mxn = new Intl.NumberFormat("es-MX", { maximumFractionDigits: 0 });
+import { currency } from "../data/plans";
 
-/** 3490 → "$3,490" */
+const withCents = new Intl.NumberFormat("es-MX", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+const whole = new Intl.NumberFormat("es-MX", { maximumFractionDigits: 0 });
+
+/** 19.99 → "$19.99" · 0 → "$0" · 1200 → "$1,200" */
 export function formatPrice(amount: number): string {
-  return `$${mxn.format(amount)}`;
+  return `$${Number.isInteger(amount) ? whole.format(amount) : withCents.format(amount)}`;
 }
 
-/** 3490 → "$3,490 MXN" */
-export function formatPriceMxn(amount: number): string {
-  return `${formatPrice(amount)} MXN`;
+/** 19.99 → "$19.99 USD" */
+export function formatPriceWithCurrency(amount: number): string {
+  return `${formatPrice(amount)} ${currency}`;
 }
 
-/** Equivalente mensual de un precio anual, redondeado: 3490 → 291 */
+/** Equivalente mensual de un precio anual, a centavos: 199.99 → 16.67 */
 export function monthlyEquivalent(yearly: number): number {
-  return Math.round(yearly / 12);
+  return Math.round((yearly / 12) * 100) / 100;
 }
 
 /** { min: 30, max: 40 } → "30–40 %"; si son iguales → "30 %" */
